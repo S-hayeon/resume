@@ -8,9 +8,12 @@ app = Flask(__name__)
 @logger.catch
 @app.route("/")
 def main():
-    global running_status
     return render_template('index.html')
 
+@logger.catch
+@app.route("/test")
+def main():
+    return render_template('index1.html')
 
 
 if __name__ == "__main__":
