@@ -12,7 +12,7 @@ def main():
 
 @logger.catch
 @app.route("/test")
-def main():
+def main2():
     return render_template('index1.html')
 
 
