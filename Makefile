@@ -1,4 +1,4 @@
-VERSION ?= v2.0.4
+VERSION ?= v2.0.5
 
 
 REGISTRY ?= hayeona92
