@@ -15,6 +15,10 @@ def main():
 def main2():
     return render_template('index1.html')
 
+@logger.catch
+@app.route("/ko")
+def main3():
+    return render_template('ko.html')
 
 if __name__ == "__main__":
     from waitress import serve

@@ -1,4 +1,4 @@
-VERSION ?= v2.0.8
+VERSION ?= v8.0.0
 
 
 REGISTRY ?= hayeona92
@@ -17,7 +17,11 @@ docker-push: docker-push-resume
 deploy: docker-build docker-push
 
 docker-build-resume:
-	docker build . --platform linux/amd64 -t ${resume}
+	if [ `uname -m` = "arm64" ]; then \
+	    docker build . --platform linux/amd64 -t ${resume}; \
+	else \
+	    docker build . -t ${resume}; \
+	fi
 
 docker-push-resume:
 	docker push ${resume}
